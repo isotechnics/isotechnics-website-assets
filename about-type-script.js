@@ -55,27 +55,27 @@ window.addEventListener("load", () => {
         ease: "power3.out",
         duration: 0.05,
         onComplete: () => {
-          // typeSplitScroll1.revert();
-          // const heading = document.querySelector(".anim-scroll1");
-          // const str = heading.innerHTML;
-          // const i1 = str.indexOf("two");
-          // const i2 = str.indexOf(":") - 1;
-          // function insert(places, str) {
-          //   return places
-          //     .reduce(function (r, a) {
-          //       r[a.start] = "<span>" + r[a.start];
-          //       r[a.end] += "</span>";
-          //       return r;
-          //     }, str.split(""))
-          //     .join("");
-          // }
-          // const places = [{ start: i1, end: i2 }];
-          // heading.innerHTML = insert(places, str);
-          // setTimeout(() => {
-          //   document
-          //     .querySelector(".anim-scroll1 span")
-          //     .classList.add("text-color-blue");
-          // }, 1);
+          typeSplitScroll1.revert();
+          const heading = document.querySelector(".anim-scroll1");
+          const str = heading.innerHTML;
+          const i1 = str.indexOf("delivering");
+          const i2 = str.indexOf(".") - 1;
+          function insert(places, str) {
+            return places
+              .reduce(function (r, a) {
+                r[a.start] = "<span>" + r[a.start];
+                r[a.end] += "</span>";
+                return r;
+              }, str.split(""))
+              .join("");
+          }
+          const places = [{ start: i1, end: i2 }];
+          heading.innerHTML = insert(places, str);
+          setTimeout(() => {
+            document
+              .querySelector(".anim-scroll1 span")
+              .classList.add("text-color-green");
+          }, 1);
         },
       });
 
